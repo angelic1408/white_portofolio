@@ -1,0 +1,66 @@
+[
+	{
+		"text": ["Hello", "My name is Angel", "A UX designer based in Japan", "Is English OK for you?"],
+		"options": [ {"text":"Yes, in English please", "link":1}, {"text":"日本語でお願いします。","link":10}]
+	},
+	{
+		"text": ["Nice!", "Do you like photography?"],
+		"options": [ {"text":"Yass!!!", "link":2}, {"text":"meh...","link":3}]
+	},
+	{
+		"text": ["Me too", "I love to travel and takes photo", "I have my own travel blog."],
+		"options": [ {"text":"Cool, take me to your blog", "inser href to blog here"}, {"text":"Let's talk about design","link":4}]
+	},
+	{
+		"text": ["I see...", "Probably a little bit more about me", "I'm a pixel crafter, I help company create a good design"],
+		"options": [ {"text":"Really? What company?", "link":5}, {"text":"Cool, show me your gigs","link to timeline"}]
+	},
+	{
+		"text": ["...Wait...", "Are you possibly a designer too?"],
+		"options": [ {"text":"Yes!!!", "link": 6}, {"text":"Nope","link":7}]
+	},
+	{
+		"text": ["I work for Rakuten Japan.", "I also worked at Indonesia before."],
+		"options": [ {"text":"Indonesia? What did you do?", "link to timeline"}, {"text":"What did you do for them?", "link":8}]
+	},
+	{
+		"text": ["I know it!!!", "Do you want to see my work?"],
+		"options": [ {"text":"Sure, show me!", "link to portfolio"}, {"text":"Nope","link":9}]
+	},
+	{
+		"text": ["It's OK", "But thank you for coming to my blog", "drop me your contact and message, I'll get back to you."],
+		"options": [ {"link to contact form"}]
+	},
+	{
+		"text": ["I'm happy to talk about it", "Drop me your message and contact, I'll get back to you."],
+		"options": [ {"link to contact form"}]
+	},
+	{
+		"text": ["Interesting. By the way, I gotta go now, my planet needs me.", "Feel free to browse my site."]
+	},
+	{
+		"text": ["じゃ、日本語で", "えー私は「楽しい！」「心地いい！」ウェブやアップリを作ります。", "あなたはデザイナーさんでしょうか？"],
+		"options": [ {"text":"はい、私も。", "link":11}, {"text":"あ！違いますね。","link":12}]
+	},
+	{
+		"text": ["やっぱり！他のデザイナーさんに会えると嬉しいな。", "私の制作を見ましょうか？"],
+		"options": [ {"text":"見たい！", "link to portfolio"}, {"text":"後で見る。","link":13}]
+	},
+	{
+		"text": ["ごめん、ごめん。", "じゃ、私のことをちょっとだけ話します。", "インドネシア出身です。写真を撮るのは大好き。"],
+		"options": [ {"text":"ええ！！写真見せていい？", "link　to blog"}, {"text":"そうか？日本で何をしてますか？","link":14}]
+	},
+	{
+		"text": ["いいよ。", "私のサイトでごゆっくりどうぞ。"]
+	},
+	{
+		"text": ["大学院生だった。", "今はUI/UXデザイナーとして、楽天で勤めています。", "インドネシアでも働いた経験があります。"],
+		"options": [ {"text":"こっちの大学？どこ？", "link　to timeline"}, {"text":"もっと詳しいで教えてください。","link":15}]
+	},
+	{
+		"text": ["いいよ。", "でも、この後ミーティングがありますので、", "メッセージを書いて、またご連絡をさせていただきます。"],
+		"options": [ {"text":"了解です。", "link　to contact"} ]
+	},
+	
+
+];

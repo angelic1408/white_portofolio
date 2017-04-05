@@ -1,3 +1,115 @@
+/*Extra Large Scree
+*/
+
+@media only screen and (min-width: 1170px){
+  /*Styling the notes for subpage*/
+  .image-notes{
+    position: relative;
+  }
+
+  .notes {
+    font-size: 0.8em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 0
+  }
+
+  .notes li {
+    background: rgba(98,170,255,0.95);
+    color: #fff;
+    padding: 15px;
+    line-height: 1.4;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 5px 10px 2px rgba(0,0,0,0.1);
+    position: absolute;
+    width: 280px;
+    z-index: 10;
+  }
+
+  .notes li:before{
+    content: "";
+    display: block; /* reduce the damage in FF3.0 */
+    position: absolute;
+    width: 0;
+  }
+
+  .note-left:before {
+    bottom: 15px;
+    left: 227px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #69ADFD;
+  }
+
+  .note-right:before {
+    bottom: 28px;
+    left: -13px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #69ADFD;
+  }
+
+  .note-top:before {
+    bottom: -12px;
+    left: 110px;
+    border-top: 15px solid #69ADFD;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+  }
+
+  .note-bottom:before {
+    top: -9px;
+    left: 115px;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #69ADFD;
+    border-left: 15px solid transparent;
+  }
+
+
+  .notes li.is-hidden{
+    visibility: hidden;
+  }
+
+  .notes li.slideUp {
+    -webkit-animation: 1s slideUp ease forwards;
+    -o-animation: 1s slideUp ease forwards;
+    animation: 1s slideUp ease forwards;
+
+  }
+
+  @-webkit-keyframes slideUp {
+      0% {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 60px, 0);
+          transform: translate3d(0, 60px, 0)
+      }
+
+      100% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none
+      }
+  }
+
+  @keyframes slideUp {
+      0% {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 60px, 0);
+          transform: translate3d(0, 60px, 0)
+      }
+
+      100% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none
+      }
+  }
+}
+
+
 @media only screen and (min-width : 768px) {
   .nav.navbar-nav > li:hover > ul.sub-menu{
     display: block;
@@ -68,6 +180,9 @@
     border-width:78px 106px 0;
   }
 
+  .notes{
+      display: none;
+    }
 }
 
 /* sm */
@@ -215,6 +330,10 @@
     outline: none;
   }
 
+  .port-header#header{
+    padding: 10px 0;
+  }
+
   .navbar-header .navbar-toggle .icon-bar {
     background-color: #00aeef;
   }
@@ -253,7 +372,7 @@
   }
 
   #header .navbar-nav.navbar-right li > a {
-    padding: 10px 0;
+    padding: 10px 10px;
   }
 
   #header .navbar-nav li ul.sub-menu li a {
@@ -267,7 +386,7 @@
   }
 
   #home-slider {
-    margin: 30px 20px 40px;
+    margin: 30px 0px 40px;
   }
 
   #home-slider .main-slider {
