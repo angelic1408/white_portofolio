@@ -1,6 +1,4 @@
-var cm;
 function ChatManager(elementId) {
-	cm = this;
 	var chatManager = this;
 	var chatOptions = [
 		{
@@ -66,7 +64,6 @@ function ChatManager(elementId) {
 			"options": [ {"text":"了解です。", "link": -1} ]
 		}
 	];
-	var chatOptionsTextIterator = 0;
 	var mainContainer = $("#"+elementId);
 	var chatContainer = mainContainer.find(".chat-text-container");
 	var responseContainer = mainContainer.find(".chat-response-container");
@@ -74,28 +71,17 @@ function ChatManager(elementId) {
 
 	this.handleClick = function(option) {
 		var chatOption = chatOptions[option];
+		for (var i in chatOption["text"]) {
+			var text = chatOption["text"][i];
+			chatManager.displayOtherChatText(text);
+		}
 		chatManager.clearResponseOptions();
-		chatManager.chatOptionsTextIterator = 0;
-		chatManager.iterateOptionTexts(chatOption);
+		chatManager.popResponseTexts(chatOption);
 	}
 
 	this.clearResponseOptions = function() {
 		responseContainer.fadeOut(400);
 		responseContainer.html("");
-	}
-
-	this.iterateOptionTexts = function(chatOption) {
-		setTimeout(function() {
-			if (chatManager.chatOptionsTextIterator == chatOption["text"].length) {
-				chatManager.chatOptionsTextIterator = 0;
-				chatManager.popResponseTexts(chatOption);
-				return;
-			}
-			var text = chatOption["text"][chatManager.chatOptionsTextIterator];
-			chatManager.displayOtherChatText(text);
-			chatManager.iterateOptionTexts(chatOption);
-			chatManager.chatOptionsTextIterator++;
-		}, 1000);
 	}
 
 	this.popResponseTexts = function(chatOption) {
@@ -110,28 +96,30 @@ function ChatManager(elementId) {
 				var link = $(this).data("link");
 				chatManager.displaySelfChatText(text);
 				chatManager.handleClick(link);
-				console.log("link: " + link)
 			});
 			responseContainer.append(element);
 		}
-		
 		responseContainer.fadeIn(400);
 	}	
 	
 	this.displayOtherChatText = function(text) {
 		var element = $("<li class='other'></li>");
 		element.html("<div class='msg'><p>"+text+"</p></div>");
+
+		var chatBox = element.find(".msg");
+		var chatBoxText = element.find(".msg p");
+		var temp = chatBoxText.html(text).width();
+		chatBoxText.html("");
 		chatContainer.append(element);
 
-		console.log("animating " + text);
-		animationsManager.animateTextOther(element, text);
-		// var temp = element.find(".msg p").html(text).width();
-		// element.find(".msg p").html("...")
-			//element.fadeIn(100);
-		//element.find(".msg").addClass("msg-in");
-		// element.find(".msg").css('min-width', temp +"px");
-		// element.find(".msg p").html(text);            
-		// element.find(".msg p").addClass("msg-fade");
+		animationsManager.bindAnimationEndCallback(chatBox);
+		animationsManager.addAnimation(function() { chatBox.addClass("msg-in"); });
+		animationsManager.addAnimation(function() { chatManager.dots(chatBoxText); animationsManager.next(); });
+		animationsManager.addDelay();
+		//chatBox.css('min-width', temp +"px");
+		animationsManager.addAnimation(function() { chatBoxText.html(text); animationsManager.next(); });
+		// animationsManager.addAnimation(function() { chatBox.hide(); });
+		// animationsManager.addAnimation(function() { chatBox.addClass("msg-fade"); });
 	}
 
 	this.displaySelfChatText = function(text) {
@@ -143,9 +131,19 @@ function ChatManager(elementId) {
 		element.find(".msg").addClass("msg-up");
 	}
 
-	this.foo = function() {
-		var element = $($(".msg")[0]);
-		animationsManager.animateTextOther(element);
+	this.dots = function(chatBoxText) {
+		var count = 0;
+		var string = '';
+		chatBoxText.html("");
+		var intervalId = setInterval(function() {
+			string = string == "...." ? "" : string;
+			string += '.';
+			chatBoxText.html(string);
+			count++;
+			if (count >= 8) {
+				clearInterval(intervalId);
+			}
+		}, 100);
 	}
 
 	// Start
@@ -153,29 +151,37 @@ function ChatManager(elementId) {
 }
 
 function AnimationsManager() {
+	var animationsManager = this;
 	var animationsQueue = [];
 	var isAnimating = false;
 
-	this.animateTextOther = function(element, text) {
-		var chatBox = element.find(".msg");
-		var chatBoxText = element.find(".msg p");
-		var temp = element.find(".msg p").html(text).width();
-		this.bindAnimationEndCallback(chatBox);
-
-		chatBoxText.html("...");
-		this.addAnimation(function() { chatBox.addClass("msg-in"); });
-		chatBox.css('min-width', temp +"px");
-		chatBoxText.html(text);            
-		this.addAnimation(function() { chatBox.addClass("msg-fade"); });
-	}
-
 	this.addDelay = function() {
 		this.addAnimation(function() {
-			setTimeout(function() {
-				console.log("delayed");
-				isAnimating = false;
-			}, 1000);
+			isAnimating = true;
+			setTimeout(function() { isAnimating = false; }, 500);
 		});
+	}
+
+	this.addAnimation = function(animation) {
+		animationsQueue.push(animation);
+	}
+
+	this.bindAnimationEndCallback = function(element) {
+		element.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", this.next);
+	}
+
+	this.getAnimationsQueue = function() {
+		console.log("isAnimating: " + isAnimating);
+		return animationsQueue;
+	}
+	this.unblockAnimations = function() {
+		isAnimating = false;
+	}
+
+	this.next = function(event) {
+		setTimeout(function() {
+			isAnimating = false;
+		}, 500);
 	}
 
 	this.animate = function() {
@@ -184,19 +190,6 @@ function AnimationsManager() {
 			isAnimating = true;
 			animation();
 		}
-	}
-
-	this.addAnimation = function(animation) {
-		animationsQueue.push(animation);
-	}
-
-	this.bindAnimationEndCallback = function(element) {
-		element.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function(event) {
-			console.log("animation ended");
-			setTimeout(function() {
-				isAnimating = false;	
-			}, 1000);
-		});
 	}
 
 	setInterval(this.animate, 100);
