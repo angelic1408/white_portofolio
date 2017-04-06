@@ -2947,6 +2947,7 @@ span.stButton_gradient,
 
 .msg {
     background: #eef8ff;
+    min-height: 30px;
     min-width: 50px;
     max-width: 90%;
     padding: 10px;
