@@ -1,4 +1,6 @@
+var cm;
 function ChatManager(elementId) {
+	cm = this;
 	var chatManager = this;
 	var chatOptions = [
 		{
@@ -23,7 +25,7 @@ function ChatManager(elementId) {
 		},
 		{
 			"text": ["I work for Rakuten Japan.", "I also worked at Indonesia before."],
-			"options": [ {"text":"Indonesia? What did you do?", "link": -1}, {"text":"What did you do for them?", "link":8}]
+			"options": [ {"text":"Indonesia? What did you do?", "link": 16}, {"text":"What did you do for them?", "link":8}]
 		},
 		{
 			"text": ["I know it!!!", "Do you want to see my work?"],
@@ -62,6 +64,9 @@ function ChatManager(elementId) {
 		{
 			"text": ["いいよ。", "でも、この後ミーティングがありますので、", "メッセージを書いて、またご連絡をさせていただきます。"],
 			"options": [ {"text":"了解です。", "link": -1} ]
+		},
+		{
+			"text": ["Let me show you!", "<a href='#'>Here's my story!</a>", "Click that link and enjoy your stay at my Blog. :)"]
 		}
 	];
 	var mainContainer = $("#"+elementId);
@@ -85,6 +90,7 @@ function ChatManager(elementId) {
 	}
 
 	this.popResponseTexts = function(chatOption) {
+		responseContainer.hide();
 		for (var i in chatOption["options"]) {
 			var option = chatOption["options"][i];
 			var element = $("<div class='msg response-choice chat-response'></div>");
@@ -99,7 +105,7 @@ function ChatManager(elementId) {
 			});
 			responseContainer.append(element);
 		}
-		responseContainer.fadeIn(400);
+		animationsManager.addAnimation(function() { responseContainer.fadeIn(400); animationsManager.next(); });
 	}	
 	
 	this.displayOtherChatText = function(text) {
@@ -108,18 +114,26 @@ function ChatManager(elementId) {
 
 		var chatBox = element.find(".msg");
 		var chatBoxText = element.find(".msg p");
-		var temp = chatBoxText.html(text).width();
+		var oldWidth = 30;
+		var newWidth;
 		chatBoxText.html("");
 		chatContainer.append(element);
 
 		animationsManager.bindAnimationEndCallback(chatBox);
 		animationsManager.addAnimation(function() { chatBox.addClass("msg-in"); });
-		animationsManager.addAnimation(function() { chatManager.dots(chatBoxText); animationsManager.next(); });
+		animationsManager.addAnimation(function() { chatManager.dots(chatBoxText); animationsManager.next(); })
 		animationsManager.addDelay();
-		//chatBox.css('min-width', temp +"px");
-		animationsManager.addAnimation(function() { chatBoxText.html(text); animationsManager.next(); });
-		// animationsManager.addAnimation(function() { chatBox.hide(); });
-		// animationsManager.addAnimation(function() { chatBox.addClass("msg-fade"); });
+		animationsManager.addAnimation(function() {
+			chatBoxText.html(text); 
+			newWidth = chatBoxText.outerWidth();
+		    chatBoxText.width(oldWidth);
+	    	chatBoxText.html("");
+			animationsManager.next();
+		});
+		animationsManager.addAnimation(function() { chatBoxText.animate({width: newWidth});  animationsManager.next(); })
+		// animationsManager.addDelay();
+		// animationsManager.addAnimation(function() { chatBoxText.addClass("fadeIn"); chatBoxText.html(text); animationsManager.next(); });
+
 	}
 
 	this.displaySelfChatText = function(text) {
@@ -138,12 +152,21 @@ function ChatManager(elementId) {
 		var intervalId = setInterval(function() {
 			string = string == "...." ? "" : string;
 			string += '.';
-			chatBoxText.html(string);
+			// if (chatBoxText.length  == 0 || chatBoxText.html().replace(".","") == "") {
+				chatBoxText.html(string);
+			// } else {
+			// 	// Chat text has been displayed
+			// 	clearInterval(intervalId);
+			// }
 			count++;
 			if (count >= 8) {
 				clearInterval(intervalId);
 			}
 		}, 100);
+	}
+
+	this.foo = function() {
+		return chatOptions;
 	}
 
 	// Start

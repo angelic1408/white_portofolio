@@ -2998,7 +2998,10 @@ span.stButton_gradient,
 }
 
 .msg-fade{
-  animation: fadein 1.5s ease-in-out forwards;
+  animation: fadein 2s ease-in-out forwards;
+  -moz-animation: fadein 2s ease-in-out forwards; /* Firefox */
+  -webkit-animation: fadein 2s ease-in-out forwards; /* Safari and Chrome */
+  -o-animation: fadein 2s ease-in-out forwards;
 }
 
 @keyframes fadein {
