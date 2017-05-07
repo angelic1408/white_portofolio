@@ -122,18 +122,15 @@ function ChatManager(elementId) {
 		animationsManager.bindAnimationEndCallback(chatBox);
 		animationsManager.addAnimation(function() { chatBox.addClass("msg-in"); });
 		animationsManager.addAnimation(function() { chatManager.dots(chatBoxText); animationsManager.next(); })
-		animationsManager.addDelay();
 		animationsManager.addAnimation(function() {
 			chatBoxText.html(text); 
-			newWidth = chatBoxText.outerWidth();
+			newWidth = chatBoxText.outerWidth() + 10;
 		    chatBoxText.width(oldWidth);
 	    	chatBoxText.html("");
 			animationsManager.next();
 		});
-		animationsManager.addAnimation(function() { chatBoxText.animate({width: newWidth});  animationsManager.next(); })
-		// animationsManager.addDelay();
-		// animationsManager.addAnimation(function() { chatBoxText.addClass("fadeIn"); chatBoxText.html(text); animationsManager.next(); });
-
+		animationsManager.addAnimation(function() { chatBoxText.animate({ width: newWidth }) });
+		animationsManager.addAnimation(function() { chatBoxText.html(text); animationsManager.next(); });
 	}
 
 	this.displaySelfChatText = function(text) {
@@ -152,12 +149,7 @@ function ChatManager(elementId) {
 		var intervalId = setInterval(function() {
 			string = string == "...." ? "" : string;
 			string += '.';
-			// if (chatBoxText.length  == 0 || chatBoxText.html().replace(".","") == "") {
-				chatBoxText.html(string);
-			// } else {
-			// 	// Chat text has been displayed
-			// 	clearInterval(intervalId);
-			// }
+			chatBoxText.html(string);
 			count++;
 			if (count >= 8) {
 				clearInterval(intervalId);
@@ -204,7 +196,7 @@ function AnimationsManager() {
 	this.next = function(event) {
 		setTimeout(function() {
 			isAnimating = false;
-		}, 500);
+		}, 300);
 	}
 
 	this.animate = function() {
