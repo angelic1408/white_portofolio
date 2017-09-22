@@ -1,4 +1,13 @@
 var cm;
+
+$(document).on('click', '.msg-fade a', function () {
+    var scrollHere = $($.attr(this, 'href')).offset().top;
+    $('html, body').animate({
+        scrollTop: scrollHere
+    }, 500);
+    return false;
+});
+
 function ChatManager(elementId) {
 	cm = this;
 	var chatManager = this;
@@ -13,11 +22,11 @@ function ChatManager(elementId) {
 		},
 		{
 			"text": ["Me too", "I love to travel and takes photo", "I have my own travel blog."],
-			"options": [ {"text":"Cool, take me to your blog", "link": -1}, {"text":"Let's talk about design","link":4}]
+			"options": [ {"text":"Cool, take me to your blog", "link": 16}, {"text":"Let's talk about design","link":4}]
 		},
 		{
 			"text": ["I see...", "Probably a little bit more about me", "I'm a pixel crafter, I help company create a good design"],
-			"options": [ {"text":"Really? What company?", "link":5}, {"text":"Cool, show me your gigs", "link": -1}]
+			"options": [ {"text":"Really? What company?", "link":5}, {"text":"Cool, show me your gigs", "link": 17}]
 		},
 		{
 			"text": ["...Wait...", "Are you possibly a designer too?"],
@@ -25,19 +34,17 @@ function ChatManager(elementId) {
 		},
 		{
 			"text": ["I work for Rakuten Japan.", "I also worked at Indonesia before."],
-			"options": [ {"text":"Indonesia? What did you do?", "link": 16}, {"text":"What did you do for them?", "link":8}]
+			"options": [ {"text":"Indonesia? What did you do?", "link": 18}, {"text":"What did you do for them?", "link":8}]
 		},
 		{
 			"text": ["I know it!!!", "Do you want to see my work?"],
-			"options": [ {"text":"Sure, show me!", "link": -1}, {"text":"Nope","link":9}]
+			"options": [ {"text":"Sure, show me!", "link": 17}, {"text":"Nope","link":9}]
 		},
 		{
-			"text": ["It's OK", "But thank you for coming to my blog", "drop me your contact and message, I'll get back to you."],
-			"options": [ {"link": -1}]
+			"text": ["It's OK", "But thank you for coming to my site", "<a href='#footer'>drop me your contact and message</a>, I'll get back to you."],
 		},
 		{
-			"text": ["I'm happy to talk about it", "Drop me your message and contact, I'll get back to you."],
-			"options": [ {"link": -1}]
+			"text": ["I'm happy to talk about it", "<a href='#footer'>Drop me your message and contact</a>, I'll get back to you."],
 		},
 		{
 			"text": ["Interesting. By the way, I gotta go now, my planet needs me.", "Feel free to browse my site."]
@@ -48,25 +55,39 @@ function ChatManager(elementId) {
 		},
 		{
 			"text": ["やっぱり！他のデザイナーさんに会えると嬉しいな。", "私の制作を見ましょうか？"],
-			"options": [ {"text":"見たい！", "link": -1}, {"text":"後で見る。","link":13}]
+			"options": [ {"text":"見たい！", "link": 19}, {"text":"後で見る。","link":13}]
 		},
 		{
-			"text": ["ごめん、ごめん。", "じゃ、私のことをちょっとだけ話します。", "インドネシア出身です。写真を撮るのは大好き。"],
-			"options": [ {"text":"ええ！！写真見せていい？", "link": -1}, {"text":"そうか？日本で何をしてますか？","link":14}]
+			"text": ["ごめん、ごめん。", "私のことをちょっとだけ話していいの？", "インドネシア出身です。写真を撮るのは大好き。"],
+			"options": [ {"text":"ええ！！写真見せていい？", "link": 20}, {"text":"そうか？日本で何をしてますか？","link":14}]
 		},
 		{
 			"text": ["いいよ。", "私のサイトでごゆっくりどうぞ。"]
 		},
 		{
 			"text": ["大学院生だった。", "今はUI/UXデザイナーとして、楽天で勤めています。", "インドネシアでも働いた経験があります。"],
-			"options": [ {"text":"こっちの大学？どこ？", "link": -1}, {"text":"もっと詳しいで教えてください。","link":15}]
+			"options": [ {"text":"こっちの大学？どこ？", "link": 21}, {"text":"もっと詳しいで教えてください。","link":15}]
 		},
 		{
-			"text": ["いいよ。", "でも、この後ミーティングがありますので、", "メッセージを書いて、またご連絡をさせていただきます。"],
-			"options": [ {"text":"了解です。", "link": -1} ]
+			"text": ["いいよ。", "でも、この後ミーティングがありますので、", "<a href='#footer'>メッセージを書いて</a>、またご連絡をさせていただきます。"],
 		},
 		{
-			"text": ["Let me show you!", "<a href='#'>Here's my story!</a>", "Click that link and enjoy your stay at my Blog. :)"]
+			"text": ["Let me show you!", "<a href='https://angelahwang.com'>Here you go :D</a>", "Click that link and enjoy your stay at my Blog. :)"]
+		},
+		{
+			"text": ["<a href='#portfolio'>Here's my portfolio</a>", "Take a look and them, ", "And please tell me how you like it <a href='#footer'>here</a> :)"]
+		},
+		{
+			"text": ["Well...", "It's a long story", "To put it short, I create <a href='#services'>a timeline</a> :)","You can read a brief about me. <br> Please enjoy your time here"]
+		},
+		{
+			"text": ["ここで見れますよ", "まだまだなので、これからも頑張って続けて行きたいと思います", "じゃ、ごゆっくりで。"],
+		},
+		{
+			"text": ["えっと写真なら, <br>　Instagramで見れますよ。", "<a href='https://angelahwang.com'>ブログ</a>でもあります。見て頂けると嬉し！", "じゃ、ごゆっくりで。"],
+		},
+		{
+			"text": ["そうですね。大学院は日本なので、学士はインドネシアだった。", "長い話なので、<a href='#services'>ここでまとめています、</a>", "見て終わったら、別の部分も見てね :D"],
 		}
 	];
 	var mainContainer = $("#"+elementId);
@@ -121,16 +142,26 @@ function ChatManager(elementId) {
 
 		animationsManager.bindAnimationEndCallback(chatBox);
 		animationsManager.addAnimation(function() { chatBox.addClass("msg-in"); });
-		animationsManager.addAnimation(function() { chatManager.dots(chatBoxText); animationsManager.next(); })
+		animationsManager.addAnimation(function() { chatManager.dots(chatBoxText); })
 		animationsManager.addAnimation(function() {
 			chatBoxText.html(text); 
 			newWidth = chatBoxText.outerWidth() + 10;
-		    chatBoxText.width(oldWidth);
-	    	chatBoxText.html("");
+			chatBoxText.html("");
 			animationsManager.next();
 		});
-		animationsManager.addAnimation(function() { chatBoxText.animate({ width: newWidth }) });
-		animationsManager.addAnimation(function() { chatBoxText.html(text); animationsManager.next(); });
+		animationsManager.addAnimation(function() { 
+			chatBoxText.animate(
+				{ width: newWidth}, .5); 
+			setTimeout(function(){
+ 				chatBoxText.addClass("msg-fade");
+ 				chatBoxText.html(text);
+			}, 280);
+		});
+
+		// animationsManager.addAnimation(function() { 
+		// 	chatBoxText.addClass("msg-fade"); 
+		// 	chatBoxText.html(text); animationsManager.next(); 
+		// });
 	}
 
 	this.displaySelfChatText = function(text) {
@@ -153,7 +184,9 @@ function ChatManager(elementId) {
 			count++;
 			if (count >= 8) {
 				clearInterval(intervalId);
+				animationsManager.next();
 			}
+
 		}, 100);
 	}
 
@@ -173,7 +206,7 @@ function AnimationsManager() {
 	this.addDelay = function() {
 		this.addAnimation(function() {
 			isAnimating = true;
-			setTimeout(function() { isAnimating = false; }, 500);
+			setTimeout(function() { isAnimating = false; }, 5000);
 		});
 	}
 
@@ -196,10 +229,10 @@ function AnimationsManager() {
 	this.next = function(event) {
 		setTimeout(function() {
 			isAnimating = false;
-		}, 300);
+		}, 100);
 	}
 
-	this.animate = function() {
+	this.processing = function() {
 		if (!isAnimating && animationsQueue.length>0) {
 			var animation = animationsQueue.shift();
 			isAnimating = true;
@@ -207,10 +240,12 @@ function AnimationsManager() {
 		}
 	}
 
-	setInterval(this.animate, 100);
+	setInterval(this.processing, 100);
 }
 
+
 jQuery(function($) {'use strict';
+
 
 	//Responsive Nav
 	$('li.dropdown').find('.fa-angle-down').each(function(){

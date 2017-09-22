@@ -231,16 +231,24 @@
   color:#0884d5;
 }
 
+.social-icons ul li a:hover .fa-dribbble {
+  color:#C73B6F
+}
+
 .social-icons ul li a:hover .fa-instagram {
-  color:#620A82;
+  color:#bc2a8d;
 }
 
 .social-icons ul li a:hover .fa-google-plus {
   color:#A22523;
 }
 
+.social-icons ul li a:hover .fa-codepen {
+  color:#333;
+}
+
 .social-icons ul li a:hover .fa-envelope {
-  color:#E94989;
+  color:#fbad50;
 }
 
 .social-icons ul li a:hover .fa-linkedin {
@@ -561,7 +569,7 @@ ul.sub-menu {
 **************************/
 #home-slider {
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 #home-slider .main-slider {
@@ -608,13 +616,14 @@ ul.sub-menu {
   display: table;
   position: static;
   width: 100%;
+  padding: 30px 0;
 }
 
 .vertical-center{
   display: table-cell;
   vertical-align: middle;
   width: 100%;
-  position: statice;
+  position: static;
 }
 
 
@@ -914,7 +923,7 @@ ul.sub-menu {
 }
 
 .tour-button {
-    height: 150px;
+    height: 165px;
     background-image: url(../images/home/tour-icon2.png);
     background-repeat: no-repeat;
     width: 100%;
@@ -2930,7 +2939,7 @@ span.stButton_gradient,
     order: 1;
     border-top-left-radius: 0px;
     box-shadow: -1px 2px 0px #D4D4D4;
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .self {
@@ -2964,9 +2973,9 @@ span.stButton_gradient,
 }
 
 .other .msg p{
-  -webkit-transition: width 1s ease-in-out;
-  -o-transition: width 1s ease-in-out;
-  transition: width 1s ease-in-out;
+  -webkit-transition: width .3s ease-in-out;
+  -o-transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
 }
 
 .response{
@@ -2998,13 +3007,13 @@ span.stButton_gradient,
 }
 
 .msg-fade{
-  animation: fadein 2s ease-in-out forwards;
-  -moz-animation: fadein 2s ease-in-out forwards; /* Firefox */
-  -webkit-animation: fadein 2s ease-in-out forwards; /* Safari and Chrome */
-  -o-animation: fadein 2s ease-in-out forwards;
+  animation: font-fade .4s ease-in-out forwards;
+  -moz-animation: font-fade .4s ease-in-out forwards; /* Firefox */
+  -webkit-animation: font-fade .4s ease-in-out forwards; /* Safari and Chrome */
+  -o-animation: font-fade .4s ease-in-out forwards;
 }
 
-@keyframes fadein {
+@keyframes font-fade {
     0% { 
       color: transparent; 
     }
