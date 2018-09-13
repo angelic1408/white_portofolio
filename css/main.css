@@ -2159,6 +2159,8 @@ span.stButton_gradient,
   margin: 5px auto;
 }
 
+
+
 .corporate-info .corporate-address {
   background-image: url("../images/contact-bg.png");
   background-position: left top;
@@ -2825,6 +2827,12 @@ span.stButton_gradient,
   height: 52px;
   color: #fff;
   border:2px solid #00aeef;
+}
+
+#protected-content-form .form-group{
+  display: inline-block;
+  max-width: 50%;
+  vertical-align: bottom;
 }
 
 #newsletter {
