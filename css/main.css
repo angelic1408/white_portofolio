@@ -275,6 +275,7 @@
 .port-header#header{
   padding: 30px 0 0px 0;
   transition: all 0.3s ease-out;
+  background-color: #FFF;
 }
 
 #header .navbar.port-nav{
@@ -578,7 +579,7 @@ ul.sub-menu {
   margin-bottom: 30px;
 }
 
-#home-slider .main-slider {
+.main-slider {
   position: relative;
   height: 100vh;
   display: -webkit-box;
@@ -589,7 +590,6 @@ ul.sub-menu {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0 20px;
 }
 
 #home-slider .slide-text{
@@ -1674,7 +1674,7 @@ Portfolio Details
 }
 
 .margin-top{
-  margin-top: 150px;
+  margin-top: 120px;
 }
 
 .project-name h2{

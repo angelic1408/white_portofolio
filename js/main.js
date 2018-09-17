@@ -238,16 +238,6 @@ jQuery(function($) {'use strict';
 		});
 	}
 
-	//chat 
-	var temp = $('.slide-text'),
-		msg = $('.msg');
-	temp.on('click', function(){
-		msg.addClass ('msg-in');	
-	});
-
-	var chatManager = new ChatManager("chat-main-container");
-
-
 	//showing and hiding portfolio notes
 	var notes = $('.notes li'),
         offset = 0.8;
