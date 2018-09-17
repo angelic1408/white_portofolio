@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Home | Angelia Stefanie Portfolio</title>
+    <title>Works | Angelia Stefanie Portfolio</title>
     <meta name="description" content="Hello, I'm Angelia Stefanie. I'm UI/UX designer and travel blogger based in Japan. I research, I design, and I code.">
     <meta name="author" content="Angelia Stefanie">
     <meta name="Keywords" content="Angelia, Stefani, , UI, UX, Human-Computer, Interaction, Designer, Portfolio, Personal, Communication, Jakarta, Indonesia, Indonesian, Tokyo, Japan, Keio, KMD">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Angelia Stefanie Portfolio">
+    <meta name="twitter:title" content="Angelia Stefanie Works">
     <meta name="twitter:description" content="Hello, I'm Angelia Stefanie. I'm UI/UX designer and travel blogger based in Japan. I research, I design, and I code.">
     <meta name="twitter:image" content="">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Portfolio – Angelia Stefanie">
+    <meta property="og:title" content="Works – Angelia Stefanie">
     <meta property="og:url" content="http://portfolio.angelahwang.com/ ">
     <meta property="og:description" content="Hello, I'm Angelia Stefanie. I'm UI/UX designer and travel blogger based in Japan. I research, I design, and I code.">
-    <meta property="og:site_name" content="Angelia Stefanie Portfolio">
+    <meta property="og:site_name" content="Angelia Stefanie Works">
     <meta property="og:image" content="/images/og_image.jpg">
 
 
@@ -42,7 +42,7 @@
 </head><!--/head-->
 
 <body>
-	<header id="header" class="navbar-fixed-top port-header">      
+    <header id="header" class="navbar-fixed-top port-header">      
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
@@ -69,14 +69,14 @@
                     </button>
 
                     <a class="navbar-brand" href="index.html">
-                    	<h1 class="font-logo">Angelia Stefanie</h1>
+                        <h1 class="font-logo">Angelia Stefanie</h1>
                     </a>
                     
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="works.html">Works</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="works.html">Works</a></li>
                         <li><a href="resume.html">Resume</a></li>
                         <li><a href="https://angelahwang.com">Blog</a></li>                     
                     </ul>
@@ -86,71 +86,23 @@
     </header>
     <!--/#header-->
 
-    
-    <div class="main">
-
-
-        <section id="home-slider">
-            <div class="container">
-                <div class="row">
-                    <div class="main-slider">
-                        <div class="slide-text">
-                            <h1>Hello my name is Angel</h1>
-                            <p class="msg-fade">I'm a UI/UX Designer and Front-End Developer based in Tokyo. <br>
-                            As a designer, I enjoy turning complex problem into intuitive design through toughtful strategy and execution.</p>
-                            <a href="#" class="btn btn-common">View My Latest Works</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
-        </section>
-        <!--/#home-slider-->
+    <div class ="main margin-top">
 
         <!--/#portfolio-->
         <section id="portfolio">
             <div class="container">
                 <div class="row padding text-center">
-                    <h1 class="title">My Latest Works</h1>
-
-                    <div class="latest-work">
-                        <div class="description">
-                            <h2>Automatic</h2>
-                            <p>Smart driving assistant that makes driving more safe, efficient, and fun.</p>
-                            <a href="case-studies/automatic">Case Study</a> <a target="_blank" href="https://www.automatic.com/">Website</a>
-                        </div>
-                    </div>
-
-                    <div class="latest-work">
-                        <div class="description">
-                            <h2>Automatic</h2>
-                            <p>Smart driving assistant that makes driving more safe, efficient, and fun.</p>
-                            <a href="case-studies/automatic">Case Study</a> <a target="_blank" href="https://www.automatic.com/">Website</a>
-                        </div>
-                    </div>
-
-                    <div class="latest-work">
-                        <div class="description">
-                            <h2>Automatic</h2>
-                            <p>Smart driving assistant that makes driving more safe, efficient, and fun.</p>
-                            <a href="case-studies/automatic">Case Study</a> <a target="_blank" href="https://www.automatic.com/">Website</a>
-                        </div>
-                    </div>
-
-                    <div class="latest-work">
-                        <div class="description">
-                            <h2>Automatic</h2>
-                            <p>Smart driving assistant that makes driving more safe, efficient, and fun.</p>
-                            <a href="case-studies/automatic">Case Study</a> <a target="_blank" href="https://www.automatic.com/">Website</a>
-                        </div>
-                    </div>
-
-                    <a href="#" class="btn btn-common">See All Works</a>
-
-
-
-                   <!--  <div class="portfolio-items">
-                        <div class="col-xs-6 col-sm-6 col-md-6 portfolio-item web mobile">
+                    <h1 class="title">Portfolio</h1>
+                    <ul class="portfolio-filter text-center">
+                        <li><a class="btn active" href="#" data-filter="*">All</a></li>
+                        <li><a class="btn" href="#" data-filter=".interaction">Interaction Design</a></li>
+                        <li><a class="btn" href="#" data-filter=".mobile">Mobile</a></li>
+                        <li><a class="btn" href="#" data-filter=".web">Web</a></li>
+                        <li><a class="btn" href="#" data-filter=".graphic">Graphic</a></li>
+                    </ul><!--/#portfolio-filter-->
+                        
+                    <div class="portfolio-items">
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item web mobile">
                             <div class="portfolio-wrapper">
                                 <div class="portfolio-single">
                                     <div class="portfolio-thumb">
@@ -162,14 +114,29 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="description">
-                                    <h2>Automatic</h2>
-                                    <p>Smart driving assistant that makes driving more safe, efficient, and fun.</p>
-                                    <a href="case-studies/automatic">Case Study</a> <a target="_blank" href="https://www.automatic.com/">Website</a>
+                                <div class="portfolio-info ">
+                                    <h2><a href="tumblr-blog.html">Payment Tumblr Blog Design</a></h2>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 portfolio-item web mobile">
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item web">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-single">
+                                    <div class="portfolio-thumb">
+                                        <img src="images/portfolio/mj_card.jpg" width="200" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="portfolio-view">
+                                        <ul class="nav nav-pills">
+                                            <li><a href="mj-redesign.html"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="portfolio-info">
+                                    <h2><a href="mj-redesign.html">Marry Jocee Redesign</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item web mobile">
                             <div class="portfolio-wrapper">
                                 <div class="portfolio-single">
                                     <div class="portfolio-thumb">
@@ -186,7 +153,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 portfolio-item web mobile">
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item web mobile">
                             <div class="portfolio-wrapper">
                                 <div class="portfolio-single">
                                     <div class="portfolio-thumb">
@@ -203,7 +170,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 portfolio-item web">
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item web">
                             <div class="portfolio-wrapper">
                                 <div class="portfolio-single">
                                     <div class="portfolio-thumb">
@@ -220,45 +187,90 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item interaction">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-single">
+                                    <div class="portfolio-thumb">
+                                        <img src="images/portfolio/tnt_card.jpg" width="200" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="portfolio-view">
+                                        <ul class="nav nav-pills">
+                                            <li><a href="tnt.html"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="portfolio-info ">
+                                    <h2><a href="tnt.html">Tata n Taro Adventure</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item interaction">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-single">
+                                    <div class="portfolio-thumb">
+                                        <img src="images/portfolio/truth_card.jpg" width="200" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="portfolio-view">
+                                        <ul class="nav nav-pills">
+                                            <li><a href="truth.html"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="portfolio-info ">
+                                    <h2><a href="truth.html">Truth?</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item interaction">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-single">
+                                    <div class="portfolio-thumb">
+                                        <img src="images/portfolio/alice_card.jpg" width="200" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="portfolio-view">
+                                        <ul class="nav nav-pills">
+                                            <li><a href="alice-sims.html"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="portfolio-info ">
+                                    <h2><a href="alice-sims.html">Surreal Interactive Movie Simulation</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item web graphic">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-single">
+                                    <div class="portfolio-thumb">
+                                        <img src="images/portfolio/misc_card.jpg" width="200" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="portfolio-view">
+                                        <ul class="nav nav-pills">
+                                            <li><a href="misc.html"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="portfolio-info ">
+                                    <h2><a href="misc.html">Miscellaneous Payment Project</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item graphic">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-single">
+                                    <div class="portfolio-thumb">
+                                        <img src="images/portfolio/xmas_card.jpg" width="200" class="img-responsive" alt="">
+                                    </div>
+                                </div>
+                                <div class="portfolio-info ">
+                                    <h2>Christmas Card Design</h2>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </section>
-        <!--/# Portfolio -->
-        
-        <!-- Contact Me -->
-        <section id="contact">
-            <div class="container">
-                <div class="row padding text-center">
-                    <h1 class="title">Contact Me</h1>
-                    <p>Got any question or interested in collaboration? Contact me through the contact form below, I'll get back to you soon.</h1>
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="contact-form bottom">   
-                            <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" required="required" placeholder="Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="email" class="form-control" required="required" placeholder="Email Address">
-                                </div>
-                                <div class="form-group">
-                                    <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
-                                </div>                        
-                                <div class="form-group">
-                                    <input type="submit" name="submit" class="btn btn-submit" value="Submit">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 ">
-                        <div class="copyright-text text-center">
-                            <p>&copy;Angelahwang -  crafted with &hearts; in Yokohama</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+    <!--/# Portfolio -->
     </div>
 
     <footer id="footer" class="portfolio-footer">
@@ -283,11 +295,10 @@
             </div>
         </div>
     </footer>
-    <!--/#footer-->
+
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>

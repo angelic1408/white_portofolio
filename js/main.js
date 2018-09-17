@@ -8,241 +8,6 @@ $(document).on('click', '.msg-fade a', function () {
     return false;
 });
 
-function ChatManager(elementId) {
-	cm = this;
-	var chatManager = this;
-	var chatOptions = [
-		{
-			"text": ["Hello", "My name is Angel", "A UX designer based in Japan", "Is English OK for you?"],
-			"options": [ {"text":"Yes, in English please", "link":1}, {"text":"日本語でお願いします。","link":10}]
-		},
-		{
-			"text": ["Nice!", "Do you like photography?"],
-			"options": [ {"text":"Yass!!!", "link":2}, {"text":"meh...","link":3}]
-		},
-		{
-			"text": ["Me too", "I love to travel and takes photo", "I have my own travel blog."],
-			"options": [ {"text":"Cool, take me to your blog", "link": 16}, {"text":"Let's talk about design","link":4}]
-		},
-		{
-			"text": ["I see...", "Probably a little bit more about me", "I'm a pixel crafter, I help company create a good design"],
-			"options": [ {"text":"Really? What company?", "link":5}, {"text":"Cool, show me your gigs", "link": 17}]
-		},
-		{
-			"text": ["...Wait...", "Are you possibly a designer too?"],
-			"options": [ {"text":"Yes!!!", "link": 6}, {"text":"Nope","link":7}]
-		},
-		{
-			"text": ["I work for Rakuten Japan.", "I also worked at Indonesia before."],
-			"options": [ {"text":"Indonesia? What did you do?", "link": 18}, {"text":"What did you do for them?", "link":8}]
-		},
-		{
-			"text": ["I know it!!!", "Do you want to see my work?"],
-			"options": [ {"text":"Sure, show me!", "link": 17}, {"text":"Nope","link":9}]
-		},
-		{
-			"text": ["It's OK", "But thank you for coming to my site", "<a href='#footer'>drop me your contact and message</a>, I'll get back to you."],
-		},
-		{
-			"text": ["I'm happy to talk about it", "<a href='#footer'>Drop me your message and contact</a>, I'll get back to you."],
-		},
-		{
-			"text": ["Interesting. By the way, I gotta go now, my planet needs me.", "Feel free to browse my site."]
-		},
-		{
-			"text": ["じゃ、日本語で", "えー私は「楽しい！」「心地いい！」ウェブやアップリを作ります。", "あなたはデザイナーさんでしょうか？"],
-			"options": [ {"text":"はい、私も。", "link":11}, {"text":"あ！違いますね。","link":12}]
-		},
-		{
-			"text": ["やっぱり！他のデザイナーさんに会えると嬉しいな。", "私の制作を見ましょうか？"],
-			"options": [ {"text":"見たい！", "link": 19}, {"text":"後で見る。","link":13}]
-		},
-		{
-			"text": ["ごめん、ごめん。", "私のことをちょっとだけ話していいの？", "インドネシア出身です。写真を撮るのは大好き。"],
-			"options": [ {"text":"ええ！！写真見せていい？", "link": 20}, {"text":"そうか？日本で何をしてますか？","link":14}]
-		},
-		{
-			"text": ["いいよ。", "私のサイトでごゆっくりどうぞ。"]
-		},
-		{
-			"text": ["大学院生だった。", "今はUI/UXデザイナーとして、楽天で勤めています。", "インドネシアでも働いた経験があります。"],
-			"options": [ {"text":"こっちの大学？どこ？", "link": 21}, {"text":"もっと詳しいで教えてください。","link":15}]
-		},
-		{
-			"text": ["いいよ。", "でも、この後ミーティングがありますので、", "<a href='#footer'>メッセージを書いて</a>、またご連絡をさせていただきます。"],
-		},
-		{
-			"text": ["Let me show you!", "<a href='https://angelahwang.com'>Here you go :D</a>", "Click that link and enjoy your stay at my Blog. :)"]
-		},
-		{
-			"text": ["<a href='#portfolio'>Here's my portfolio</a>", "Take a look and them, ", "And please tell me how you like it <a href='#footer'>here</a> :)"]
-		},
-		{
-			"text": ["Well...", "It's a long story", "To put it short, I create <a href='#services'>a timeline</a> :)","You can read a brief about me. <br> Please enjoy your time here"]
-		},
-		{
-			"text": ["ここで見れますよ", "まだまだなので、これからも頑張って続けて行きたいと思います", "じゃ、ごゆっくりで。"],
-		},
-		{
-			"text": ["えっと写真なら, <br>　Instagramで見れますよ。", "<a href='https://angelahwang.com'>ブログ</a>でもあります。見て頂けると嬉し！", "じゃ、ごゆっくりで。"],
-		},
-		{
-			"text": ["そうですね。大学院は日本なので、学士はインドネシアだった。", "長い話なので、<a href='#services'>ここでまとめています、</a>", "見て終わったら、別の部分も見てね :D"],
-		}
-	];
-	var mainContainer = $("#"+elementId);
-	var chatContainer = mainContainer.find(".chat-text-container");
-	var responseContainer = mainContainer.find(".chat-response-container");
-	var animationsManager = new AnimationsManager();
-
-	this.handleClick = function(option) {
-		var chatOption = chatOptions[option];
-		for (var i in chatOption["text"]) {
-			var text = chatOption["text"][i];
-			chatManager.displayOtherChatText(text);
-		}
-		chatManager.clearResponseOptions();
-		chatManager.popResponseTexts(chatOption);
-	}
-
-	this.clearResponseOptions = function() {
-		responseContainer.fadeOut(400);
-		responseContainer.html("");
-	}
-
-	this.popResponseTexts = function(chatOption) {
-		responseContainer.hide();
-		for (var i in chatOption["options"]) {
-			var option = chatOption["options"][i];
-			var element = $("<div class='msg response-choice chat-response'></div>");
-			element.html("<p>" + option["text"] + "</p>");
-			element.data("text", option["text"]);
-			element.data("link", option["link"]);
-			element.click(function(){
-				var text = $(this).data("text");
-				var link = $(this).data("link");
-				chatManager.displaySelfChatText(text);
-				chatManager.handleClick(link);
-			});
-			responseContainer.append(element);
-		}
-		animationsManager.addAnimation(function() { responseContainer.fadeIn(400); animationsManager.next(); });
-	}	
-	
-	this.displayOtherChatText = function(text) {
-		var element = $("<li class='other'></li>");
-		element.html("<div class='msg'><p>"+text+"</p></div>");
-
-		var chatBox = element.find(".msg");
-		var chatBoxText = element.find(".msg p");
-		var oldWidth = 30;
-		var newWidth;
-		chatBoxText.html("");
-		chatContainer.append(element);
-
-		animationsManager.bindAnimationEndCallback(chatBox);
-		animationsManager.addAnimation(function() { chatBox.addClass("msg-in"); });
-		animationsManager.addAnimation(function() { chatManager.dots(chatBoxText); })
-		animationsManager.addAnimation(function() {
-			chatBoxText.html(text); 
-			newWidth = chatBoxText.outerWidth() + 10;
-			chatBoxText.html("");
-			animationsManager.next();
-		});
-		animationsManager.addAnimation(function() { 
-			chatBoxText.animate(
-				{ width: newWidth}, .5); 
-			setTimeout(function(){
- 				chatBoxText.addClass("msg-fade");
- 				chatBoxText.html(text);
-			}, 280);
-		});
-
-		// animationsManager.addAnimation(function() { 
-		// 	chatBoxText.addClass("msg-fade"); 
-		// 	chatBoxText.html(text); animationsManager.next(); 
-		// });
-	}
-
-	this.displaySelfChatText = function(text) {
-		var element = $("<li class='self'></li>");
-		element.html("<div class='msg'><p>" + text + "</p></div>");
-		element.hide();
-		chatContainer.append(element);
-		element.fadeIn(400);
-		element.find(".msg").addClass("msg-up");
-	}
-
-	this.dots = function(chatBoxText) {
-		var count = 0;
-		var string = '';
-		chatBoxText.html("");
-		var intervalId = setInterval(function() {
-			string = string == "...." ? "" : string;
-			string += '.';
-			chatBoxText.html(string);
-			count++;
-			if (count >= 8) {
-				clearInterval(intervalId);
-				animationsManager.next();
-			}
-
-		}, 100);
-	}
-
-	this.foo = function() {
-		return chatOptions;
-	}
-
-	// Start
-	this.handleClick(0);
-}
-
-function AnimationsManager() {
-	var animationsManager = this;
-	var animationsQueue = [];
-	var isAnimating = false;
-
-	this.addDelay = function() {
-		this.addAnimation(function() {
-			isAnimating = true;
-			setTimeout(function() { isAnimating = false; }, 5000);
-		});
-	}
-
-	this.addAnimation = function(animation) {
-		animationsQueue.push(animation);
-	}
-
-	this.bindAnimationEndCallback = function(element) {
-		element.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", this.next);
-	}
-
-	this.getAnimationsQueue = function() {
-		console.log("isAnimating: " + isAnimating);
-		return animationsQueue;
-	}
-	this.unblockAnimations = function() {
-		isAnimating = false;
-	}
-
-	this.next = function(event) {
-		setTimeout(function() {
-			isAnimating = false;
-		}, 100);
-	}
-
-	this.processing = function() {
-		if (!isAnimating && animationsQueue.length>0) {
-			var animation = animationsQueue.shift();
-			isAnimating = true;
-			animation();
-		}
-	}
-
-	setInterval(this.processing, 100);
-}
-
 
 jQuery(function($) {'use strict';
 
@@ -414,7 +179,32 @@ jQuery(function($) {'use strict';
 	    else{
 	      $(".port-header").removeClass("colored");
 	    }
-	  });
+
+	    pullDescriptionUp();
+	 });
+
+
+	//portfolio parallax description	
+    var $animation_elements = $('.description');
+    var $window = $(window);
+    function pullDescriptionUp() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+        $.each($animation_elements, function() {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top;
+            var element_bottom_position = (element_top_position + element_height);
+            if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+                $element.css("margin-top", (((element_top_position -window_bottom_position) / 5) + 200) );
+            } else {
+            }
+        });
+    }
+    $window.on('scroll', pullDescriptionUp);
+    $window.trigger('scroll');
+
 
 	// Progress Bar
 	$.each($('div.progress-bar'),function(){
@@ -447,16 +237,6 @@ jQuery(function($) {'use strict';
 			backgroundColor: '#3e8bff',
 		});
 	}
-
-	//chat 
-	var temp = $('.slide-text'),
-		msg = $('.msg');
-	temp.on('click', function(){
-		msg.addClass ('msg-in');	
-	});
-
-	var chatManager = new ChatManager("chat-main-container");
-
 
 	//showing and hiding portfolio notes
 	var notes = $('.notes li'),
