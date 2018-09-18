@@ -56,7 +56,8 @@
                                     {
                                         session_destroy();
                                     }
-                                    if (! isset($_SESSION['user'])):?>
+                                    if (! isset($_SESSION['user'])):
+                                        endif;?>
 
                                      <form id="protected-content-form" name="protected-form" action="login.php" method="post">
                                         <div class="form-group">
@@ -68,10 +69,7 @@
                                         </div>
                                     </form>
 
-                                    <?php
-                                    exit();
-                                    endif;
-                                    ?>
+                                   
 
                                 </div>
                             </div>
