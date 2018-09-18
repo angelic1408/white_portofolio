@@ -1,3 +1,9 @@
+<?php
+	session_start();
+    if (is_null($_SESSION["misc_login"])) {
+        header('Location: /secure.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en" class="misc">
 <head>

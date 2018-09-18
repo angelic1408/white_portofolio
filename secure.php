@@ -33,15 +33,46 @@
                                 <div class="error-image">                                
                                     <h2>Protected Content</h2>
                                     <p>This content is password protected. To view it, please enter the password below: </p>
+
+
+                                    <?php
+                                    require('auth.php');
+                                    $auth = new HtpasswdAuth('/home/angeliastefani/www/.htpasswd');
+
+                                    if (strtolower($_SERVER['REQUEST_METHOD']) == 'post')
+                                    {
+                                        $username = isset($_POST['username']) ? $_POST['username'] : null;
+                                        $password = isset($_POST['password']) ? $_POST['password'] : null;
+                                        if ($auth->matches($username, $password))
+                                        {
+                                            $_SESSION['user'] = $username;
+                                        }
+                                        else
+                                        {
+                                            die ('Incorrect username or password');
+                                        }
+                                    } 
+                                    else if (isset($_REQUEST['logout']))
+                                    {
+                                        session_destroy();
+                                    }
+                                    if (! isset($_SESSION['user'])):?>
+
                                      <form id="protected-content-form" name="protected-form" action="login.php" method="post">
                                         <div class="form-group">
-                                            <input type="hidden" name="userID" value="guest">
+                                            <input type="hidden" name="username" value="guest">
                                              <input type="password" name="password" class="form-control" required="required" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <input type="submit" name="submit" class="btn btn-submit" value="Enter">
                                         </div>
                                     </form>
+
+                                    <?php
+                                    exit();
+                                    endif;
+                                    ?>
+
                                 </div>
                             </div>
                             <a href="index.html" class="btn btn-error">RETURN TO THE HOMEPAGE</a>
