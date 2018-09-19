@@ -1,3 +1,8 @@
+<!-- ?> 
+// session_start(); 
+// echo "Original URL " . $_SESSION["oldURL"] . ".";
+ ?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +48,8 @@
                                     {
                                         $username = isset($_POST['username']) ? $_POST['username'] : null;
                                         $password = isset($_POST['password']) ? $_POST['password'] : null;
+                                        
+
                                         if ($auth->matches($username, $password))
                                         {
                                             $_SESSION['user'] = $username;
@@ -90,6 +97,7 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 

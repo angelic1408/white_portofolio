@@ -1,6 +1,11 @@
 <?php
 	session_start();
-    if (is_null($_SESSION["misc_login"])) {
+
+    if (($_SERVER['REQUEST_URI'] != 'login.php') && ($_SERVER['REQUEST_URI'] != $_SESSION['oldURL'])) {
+        $_SESSION['oldURL']     = $_SERVER['REQUEST_URI'];    
+    }
+    
+    if (is_null($_SESSION["isLogin"])) {
         header('Location: /secure.php');
     }
 ?>
@@ -268,7 +273,7 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script> 
 

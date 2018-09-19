@@ -40,8 +40,8 @@ function wordpress_hash_password($password) {
 	$db_pass = $row["user_pass"];
 	$entered_pass = wordpress_hash_password($_POST["password"]);
 	if ($db_pass == $entered_pass) {
-		$_SESSION["misc_login"] = true;
-        header('Location: /misc.php');
+		$_SESSION["isLogin"] = true;
+        header('Location:'. $_SESSION["oldURL"]);
 	} else {
 		$_SESSION['error'] = 'Incorrect Password';
   		header('Location: secure.php');
