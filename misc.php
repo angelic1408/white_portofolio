@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Portfolio Details | Misc Project</title>
+    <title>Portfolio Details | Rakuten Pay Merchant Dashboard</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/lightbox.css" rel="stylesheet"> 
@@ -31,7 +31,7 @@
     <meta name="twitter:image" content="/images/portfolio/misc/misc_hero.jpg">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Portfolio – SOLID Portal Page Redesign">
+    <meta property="og:title" content="Portfolio – Rakuten Pay Merchant Dashboard">
     <meta property="og:url" content="http://portfolio.angelahwang.com/misc">
     <meta property="og:description" content="Beside landing page, these are samples of my other web-based designs.  ">
     <meta property="og:site_name" content="Angelia Stefanie Portfolio">
@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <div class="project-name overflow">
-                        <h2 class="bold">Designing Various Features</h2>
+                        <h2 class="bold">Designing Features for Rakuten Pay Merchant Dashboard</h2>
                         <ul class="nav navbar-nav navbar-default">
                             <li><a href="javascript:void(0)"><i class="fa fa-tag"></i>Web Design</a></li>
                             <li><a href="javascript:void(0)"><i class="fa fa-tag"></i>Interaction</a></li>
@@ -99,7 +99,9 @@
                     </div>
                     <div class="project-info overflow">
                         <h3>Project Info</h3>
-                        <p>Working in payment group makes me able to take some other projects. It does not necessarily be a website or landing page design. Sometimes I need to design or improve the Merchant's Dashboard page or improve the design of the current feature, or even designing new feature. In this page, I'm putting sample of my works, some are released and some are not.
+                        <p>Rakuten Pay Merchant Dashboard is a webpage dedicated for Rakuten Pay's Merchant where they can confirm the payment, cancel transaction, checking their sales per week/month and so on. 
+                            <br> 
+                            As a new service, Rakuten Pay Lite does not have features as much as the regular Rakuten Pay has. As a designer, it's my responsibility to think and propose features that can help Merchant's organise and take control of their sales.  
                         </p>
                         <ul class="elements">
                             <li><i class="fa fa-angle-right"></i> Status : Various</li>
@@ -126,12 +128,15 @@
      <section id="blog-details" class="padding-top">
         <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-blog overflow">
-                <h2>Creating Various Features for Payment</h2>
+                <h2>Rakuten Pay Merchant Dashboard</h2>
                 <h3>Problem</h3>
                 <p>
-                    The features I design can be a request from our customer (through our business people) or the initiative taken from development side to improve the system. <br>
+                    As a relatively new service, Rakuten Pay LITE does not offer a lot of features compared to Rakuten Pay. However, in Rakuten Pay LITE, Rakuten offer a "test" environment called Sandbox, where merchant can test and see how Rakuten Pay system handles the transaction.<br>
 
-                    The design process usually is not started with research. Normally, I develop the mock-up and I give it to business people to be reviewed. The process will take so much time because if they don't like it I have to revise and send it for review again and so on...  <br><br>
+                    As a payment service, safety issue is the number one priority. When designing a new feature, designer and engineer has to work together to ensure the credibility of the payment system. One top of that we also need to cater's the merchant need. A lot of payment services like Origami, Merpay, etc are rapidly growing in Japan. To be able to compete with these services Rakuten Pay needs to be innovative and responsive when handling the merchant's needs. <br>
+
+                    We can no longer spend 6months develop something that users won't use at the end. For these features on the merchant dashboard, I continuously work with the developer to ensure that the project can be released within 3 months timeline and be tested earlier. 
+                    One project that I have released successfully was the One-Time Password project that prevent a potential fake transaction. <br><br>
                 </p>
 
                 <h3>Designing for User</h3>
