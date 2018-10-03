@@ -1171,6 +1171,14 @@ ul.elements li > i{
   width: 100%;
 }
 
+.protected{
+  position: absolute;
+  background-color: #FFF;
+  padding-top: 10px;
+  width: 100%;
+  bottom: 0;
+}
+
 
 .portfolio-single:hover .portfolio-view{
   display: block;
@@ -3185,12 +3193,12 @@ svg {
   background-image: url(../images/portfolio/rportal/portal_hero.jpg);
 }
 
-.marry-j .hero-unit{
-  background-image: url(../images/portfolio/mj/mj_hero.jpg);
+.dazntv .hero-unit{
+  background-image: url(../images/portfolio/dazn/dazntv_hero.jpg);
 }
 
-.solid .hero-unit{
-  background-image: url(../images/portfolio/sid/sid_hero.jpg);
+.daznspot .hero-unit{
+  background-image: url(../images/portfolio/dazn/daznspot_hero.jpg);
 }
 
 .tnt .hero-unit{

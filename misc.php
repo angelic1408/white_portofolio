@@ -70,8 +70,8 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="alice-sims.html ">Previous Case Study</a></li>
-                        <li><a href="tumblr-blog.html ">Next Case Study</a></li>    
+                        <li><a href="truth.html ">Previous Case Study</a></li>
+                        <li><a href="daznspot.php ">Next Case Study</a></li>    
                     </ul>
                 </div>
             </div>

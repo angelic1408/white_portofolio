@@ -11,7 +11,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en" class="misc">
+<html lang="en" class="dazntv">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,14 +27,14 @@
 
     <meta name="author" content="Angelia Stefanie">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Other Type of Design Task">
-    <meta name="twitter:description" content="Beside landing page, these are samples of my other web-based designs. ">
+    <meta name="twitter:title" content="Portfolio – DAZN TV Applications">
+    <meta name="twitter:description" content="DAZN TV Application - Sign-up and Login Improvement Project. The Goal of this project is to improve user experience on TV application by simplying the login and sign-up process using other methods than remote control. ">
     <meta name="twitter:image" content="/images/portfolio/dazn/dazntv_hero.jpg">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Portfolio – SOLID Portal Page Redesign">
+    <meta property="og:title" content="Portfolio – DAZN TV Applications">
     <meta property="og:url" content="http://portfolio.angelahwang.com/daznTV">
-    <meta property="og:description" content="Beside landing page, these are samples of my other web-based designs.  ">
+    <meta property="og:description" content="DAZN TV Application - Sign-up and Login Improvement Project. The Goal of this project is to improve user experience on TV application by simplying the login and sign-up process using other methods than remote control. ">
     <meta property="og:site_name" content="Angelia Stefanie Portfolio">
     <meta property="og:image" content="/images/portfolio/dazn/dazntv_hero.jpg">
 
@@ -71,8 +71,8 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="">Previous Case Study</a></li>
-                        <li><a href="">Next Case Study</a></li>    
+                        <li><a href="daznspot.php">Previous Case Study</a></li>
+                        <li><a href="tumblr-blog.html">Next Case Study</a></li>    
                     </ul>
                 </div>
             </div>
@@ -180,69 +180,48 @@
                     </ul> 
                     After creating mock-ups on Marvel, we conducted user test to see which proposal may drive the highest conversion for user. 
                 </p>
-                <iframe src="https://marvelapp.com/18745c8g?emb=1&iosapp=false&frameless=false" width="1920" height="1080" allowTransparency="true" frameborder="0"></iframe>
-                <iframe src="https://marvelapp.com/183j7416?emb=1&iosapp=false&frameless=false" width="1920" height="1080" allowTransparency="true" frameborder="0"></iframe>
+                <div class = "embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://marvelapp.com/18745c8g?emb=1&iosapp=false&frameless=false"  allowTransparency="true" frameborder="0"></iframe>
+                </div>
+                <br>
+                <div class = "embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://marvelapp.com/183j7416?emb=1&iosapp=false&frameless=false"  allowTransparency="true" frameborder="0"></iframe>
+                </div>
             </div>
         </div>
-        <div class="row full-width">
-            <img class="image img-responsive" src="images/portfolio/misc/misc_all.jpg" alt="Various Function" width="1450" />
-        </div>
-
 
          <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-blog overflow">
-                <h3>Learned lesson</h3>
-                <blockquote>
-                    <p>I always did something I was a little not ready to do</p>
-                    <footer>Marissa Mayer CEO of Yahoo!</footer>
-                </blockquote>
-                <p>Most of the design project I was involved require me skills that I'm not super good on it. Name it JSON, PHP, or even I do selenium coding (for Galen Framework). <br>
-                Through all these project I learnt how to accept challenge and listen more to user. What we think is more likely to be different from what user think. <br> </p>
-            </div>
-        </div>
-        <div class="row post content">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-blog overflow">
-                <h2>Creating Various Features for Payment</h2>
-                <h3>Problem</h3>
-                <p>
-                    We have this page containing all popular and big merchants that collaborating with us. The business side asked us to develop a content management so that they don't have to edit HTML everytime they collaborate with new merchant. Most of these business are not really comfortable with technical stuffs.
-                    <br> <br>
-
-                    I arranged a meeting diretly with the coordinator from business unit. Some engineers had completely given up because the requirement keeps changing. 
-                </p> 
-            </div>
-        </div>
-
-        <div class="row post content">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-blog overflow">
-                <h3>Understanding what User Want</h3>
-                <p>
-                    As designer, we need to listen to understand, not to reply. After the meeting I found out that their biggest problem is noone there can write JSON or XML. Eventhough we built the JSON or XML structure, it will be meaningless because noone comfortable editing JSON or XML program on text-editor. <br><br>
-
-                    My suggested solution is creating a Excel Macro that can generate JSON data and what they have to do is just to fill the cell with necessary info. 
+                <h3>Usability Test</h3>
+                <p>I tested the design patterns to the users. The test was conducted in our office where we set the room to look like a living room. We told the user that they're going to pretend to watch sports content on their living room. Some of them brought their phone with them and some are not. <br>
+                Research methodology: task-based and follow-up interview. 100% user completed the task <br>
+                Here are the most common findings: <br> 
                 </p>
-                <div class = "image-notes">
+                <blockquote>
+                    "I left my phone and too lazy to get it" <br>
+                    "Old people might not understand how to scan QR code" <br>
+                    "If I don't input the QR code, I feel the system is too simple and anyone can simply register a device to my account" <br>
+                    "QR code is definitely easier than inputting the address manually"
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="row post content">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-blog overflow">
+                <h3>You are not your user</h3>
+                <p>
+                    As designer, I think that the simplest, easier, less-step design will be the best for user. However, that's not the case with this project. User think that when we embedded the pin to QR code, reducing 1 extra step for user, they think the system is not trust-worthy enough. Japanese users tend to look for more information in order for them to trust a service. Thus, separating QR code and pin-code will be the best solution to improve the sign-up and login process on TV <br><br>
+
+                    This project take a whole 1,5month to prepare the prototype to the research analysis. I learnt that as a designer, my hypothesis is not always the best and never assume that you know what the best for your user unless you test it. 
+                </p>
+<!--                 <div class = "image-notes">
                     <img class="image img-responsive" src="images/portfolio/misc/misc_concept.jpg" alt="Categorizing the old sites" width="410" />
                     <ol class="notes">
                         <li class="note-left" style="top: 5px; left: 0px; width: 230px"> Problem is the user don't know how to create JSON file. </li>
                         <li class="note-right" style="top: 50px; left: 625px; width: 195px">So I create an excel function that can generate JSON syntax and they just need to copy and paste it.</li>
                     </ol>
-                </div>
+                </div> -->
             </div>
-        </div>
-
-        <div class="row post content">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-blog overflow">
-                <h3>Result and Learned Lesson</h3>
-                <p>
-                    The project was done in 1 week and my manager was impressed on how I managed to tackle the problem. I managed to improve the efficiency because the resource for this task can be allocated for another project. <br><br>
-                    Beside learning how to generate HTML content with JSON, I learnt to listen to user needs. Sometimes the written requirement do not reflect the user need. What we need is to communicate with them.
-                </p>
-            </div>
-        </div>
-
-        <div class="row full-width">
-            <img class="image img-responsive" src="images/portfolio/misc/misc_final.jpg" alt="JSON final product" width="1450" />
         </div>
     </section>
 </div>
