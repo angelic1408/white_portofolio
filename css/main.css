@@ -169,7 +169,15 @@
 
 #header{
   margin-bottom: 0;
-  padding: 30px 0 40px 0;
+  padding: 10px 0 0px 0;
+  position: fixed; 
+  z-index: 999;
+  width: 100%; 
+}
+
+.main-header{
+  background-color: #FFF;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
 }
 
 #header .navbar-inverse .container{
@@ -570,6 +578,7 @@ ul.sub-menu {
 #home-slider {
   position: relative;
   margin-bottom: 30px;
+  margin-top: 110px
 }
 
 #home-slider .main-slider {
@@ -3197,6 +3206,10 @@ svg {
   background-image: url(../images/portfolio/dazn/dazntv_hero.jpg);
 }
 
+.daznlp .hero-unit{
+  background-image: url(../images/portfolio/dazn/daznlp_hero.jpg);
+}
+
 .daznspot .hero-unit{
   background-image: url(../images/portfolio/dazn/daznspot_hero.jpg);
 }
@@ -3215,4 +3228,74 @@ svg {
 
 .misc .hero-unit{
   background-image: url(../images/portfolio/misc/misc_hero.jpg);
+}
+
+
+/*Resume css*/
+#resume-information{
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+
+.resume-headline{
+  margin-bottom: 25px;
+}
+
+.resume-headline span{
+  border-bottom: 3px solid #ea4c89;
+  padding-bottom: 6px;
+}
+
+.exp-heading h4
+{
+  color:#ea4c89;
+}
+
+.exp-heading, .exp-body{
+  margin-bottom: 25px;
+}
+
+.exp-body ul{
+  list-style: disc;
+}
+
+.parallax{
+  background-image: url("../images/parallax-bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*#myCarousel .carousel-inner{
+  padding: 0px 10%;
+}*/
+
+.carousel-inner .item{
+  padding: 30px 10%;
+}
+
+.carousel-inner blockquote{
+  border-left: none;
+  color: #FFF
+}
+
+.carousel-inner blockquote small{
+  color:#FAFAFA;
+}
+
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+.carousel-inner>.item.active, .carousel-inner>.item.next.left, .carousel-inner>.item.prev.right{
+  -webkit-transform: translate3d(0,50px,0);
+    transform: none;
 }

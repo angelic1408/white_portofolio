@@ -72,7 +72,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="daznspot.php">Previous Case Study</a></li>
-                        <li><a href="tumblr-blog.html">Next Case Study</a></li>    
+                        <li><a href="daznLP.php">Next Case Study</a></li>    
                     </ul>
                 </div>
             </div>

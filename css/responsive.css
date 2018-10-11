@@ -338,7 +338,6 @@
   }
 
   #header {
-    padding-bottom: 40px;
     padding-top: 10px;
   }
 
@@ -408,7 +407,7 @@
   }
 
   #home-slider {
-    margin: 30px 0px 40px;
+    margin: 150px 0px 40px
   }
 
   #home-slider .main-slider {
